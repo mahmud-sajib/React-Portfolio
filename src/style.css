@@ -1,0 +1,254 @@
+@import url("https://fonts.googleapis.com/css?family=Dosis:400,700");
+
+:root {
+  --main-white-color: #f2f2f2;
+  --main-black-color: black;
+  --main-purple-color: #9e89b8;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+/* a {
+  cursor: url(../src/logo.svg);
+} */
+
+button {
+  background: none;
+  outline: none;
+  cursor: pointer;
+}
+
+ul {
+  list-style: none;
+}
+
+a {
+  text-decoration: none;
+}
+
+body {
+  font: 16px/1.5 "Dosis", sans-serif;
+  color: white;
+  /*IE FIX*/
+  /*display: flex;
+  flex-direction: column;*/
+}
+
+/* CONTAINER
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.wrapper {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  padding: 30px;
+}
+
+.wrapper > * {
+  padding: 20px;
+}
+
+/* HEADER & FOOTER
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.page-header,
+.page-footer {
+  background: var(--main-black-color);
+}
+.page-header nav,
+.page-footer nav {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* MAIN
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+.page-main {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  text-align: center;
+  flex-grow: 1;
+  min-height: 350px;
+  background: var(--main-black-color);
+  background-blend-mode: luminosity;
+  color: var(--main-white-color);
+}
+
+/* MQ
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+@media screen and (min-width: 550px) {
+}
+
+@media screen and (min-width: 768px) {
+  body {
+    font-size: 18px;
+  }
+
+  /* .page-main {
+    padding-left: 90px;
+  } */
+}
+
+/* Page Loader
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.pageloader-container {
+  background: white;
+
+  transform-origin: center;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  position: fixed;
+}
+
+.circle1 {
+  position: absolute;
+  border-radius: 50%;
+  background-color: red;
+  width: 50px;
+  height: 50px;
+  left: 10%;
+  bottom: 20%;
+}
+
+.circle2 {
+  position: absolute;
+  border-radius: 50%;
+  background-color: red;
+  width: 50px;
+  height: 50px;
+  left: 30%;
+  top: 3%;
+}
+
+.circle3 {
+  position: absolute;
+  border-radius: 50%;
+  background-color: red;
+  width: 50px;
+  height: 50px;
+  right: 10%;
+  top: 20%;
+}
+
+.circle4 {
+  position: absolute;
+  border-radius: 50%;
+  background-color: red;
+  width: 50px;
+  height: 50px;
+  right: 30%;
+  bottom: 3%;
+}
+
+.image1 {
+  position: absolute;
+  width: 50px;
+  left: 10%;
+  bottom: 20%;
+}
+
+.image2 {
+  position: absolute;
+  width: 50px;
+  left: 15%;
+  top: 3%;
+}
+
+.image3 {
+  position: absolute;
+  width: 50px;
+  right: 10%;
+  top: 20%;
+}
+
+.image4 {
+  position: absolute;
+  width: 50px;
+  right: 15%;
+  bottom: 3%;
+}
+
+.image-middle {
+  position: absolute;
+  width: 50px;
+  right: 50%;
+  bottom: 45%;
+}
+
+/* Intro Loader
+–––––––––––––––––––––––––––––––––––––––––––––––––– */
+
+.intro-element {
+  position: relative;
+  height: 100vh;
+  min-width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  -webkit-animation: 2s ease 0s normal forwards 1 fadeInOut;
+  animation: 2s ease 0s normal forwards 1 fadeInOut;
+}
+
+@keyframes fadeInOut {
+  0% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 0.7;
+  }
+  80% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@-webkit-keyframes fadeInOut {
+  0% {
+    opacity: 1;
+  }
+  60% {
+    opacity: 0.7;
+  }
+  80% {
+    opacity: 0.4;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+.intro-element img {
+  width: 30px;
+  height: auto;
+  animation: petal 2s infinite linear;
+}
+
+@keyframes petal {
+  0% {
+    transform: rotate(0);
+  }
+
+  100% {
+    transform: rotate(360deg);
+  }
+}
+
+.intro-element p {
+  color: black;
+  display: block;
+  margin-left: -23px;
+  margin-top: 65px;
+}
