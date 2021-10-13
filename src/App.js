@@ -1,14 +1,19 @@
-import { useEffect, useState } from "react";
-import AnimatedCursor from "react-animated-cursor"
+import { useEffect, useState } from "react"
+// import AnimatedCursor from "react-animated-cursor"
 import './style.css'
-import { motion, AnimatePresence, AnimateSharedLayout } from "framer-motion";
-// import "./sass/main.scss";
-import Header from './components/Header/Header'
-import Footer from './components/Footer/Footer'
+import { motion, AnimatePresence, AnimateSharedLayout } from "framer-motion"
 
 // Components
-import Loader from "./components/Loader";
-import Intro from "./components/Intro";
+import Header from './components/Header'
+import Footer from './components/Footer'
+import Loader from "./components/Loader"
+import Intro from "./components/Intro"
+import Cursor from "./components/Cursor"
+import Button from "./components/Button"
+
+
+
+
 
 function App() {
   const [initloader, setInitLoader] = useState(true)
@@ -17,25 +22,12 @@ function App() {
   useEffect(() => {
     setTimeout(() => {
       setInitLoader(false)
-
-      setTimeout(() => {
-        setLoading(true);
-      }, 0);
-
+      setLoading(true)
     }, 2000)
   },[])
 
-  // useEffect(() => {
-  //   loading
-  //     ? document.querySelector("body").classList.add("loading")
-  //     : document.querySelector("body").classList.remove("loading");
-  // }, [loading]);
-
   return (
-
-    
-<>
-    
+    <>
       {
         initloader ? (
           <Intro />
@@ -48,8 +40,7 @@ function App() {
                 <motion.div key="loader"><Loader setLoading={setLoading} /></motion.div> 
               ) : (
                 <>
-                  <div className="App">
-                    <AnimatedCursor />
+                  <div className="App">        
                     <motion.div class="wrapper"
                       initial={{ opacity:0, y:-180 }}
                       animate={{ opacity:1, y:0 }}
@@ -59,15 +50,17 @@ function App() {
                         delay: 0.6
                       }}
                     >
-                    <Header />
-                    <main class="page-main">
-                      <div>
-                        <h1>We are here to <a href="https://fast.com/">help you</a></h1>
-                      </div>
-                    </main>
-                    
-                    <Footer />
+                      <Header />
+                      <main class="page-main">
+                        <div>
+                          <h1>We are here to <a href="https://fast.com/">help you</a></h1>
+                          <Button />
+                        </div>
+                      </main>
+                      <Footer />
                     </motion.div>
+                    <Cursor />
+                    
                   </div>
                 </>
               )}
@@ -75,9 +68,7 @@ function App() {
           </AnimateSharedLayout>
         )
       }
-      </>
-    
-    
+    </>
   );
 }
 

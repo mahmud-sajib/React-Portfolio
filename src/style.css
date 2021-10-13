@@ -10,7 +10,13 @@
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+  cursor: none !important;
 }
+
+/* .show-cursor {
+  cursor: url("./");
+  z-index: 99999;
+} */
 
 /* a {
   cursor: url(../src/logo.svg);
@@ -251,4 +257,35 @@ body {
   display: block;
   margin-left: -23px;
   margin-top: 65px;
+}
+
+.cursor2 {
+  width: 90px;
+  height: 90px;
+  border-radius: 50%;
+  border: 2px solid white;
+  position: absolute;
+  /* transform: translate3d(-50%, -50%, 0); */
+}
+
+.cursor2 span {
+  font-size: 12px;
+  line-height: 7;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.cursor2 img {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  left: 100px;
+  top: -30px;
+}
+
+a,
+button {
+  cursor: auto !important;
 }
