@@ -1,68 +1,66 @@
-import { useEffect, useState, useContext } from "react"
-// import AnimatedCursor from "react-animated-cursor"
-import './style.css'
-import { motion, AnimatePresence, AnimateSharedLayout } from "framer-motion"
-import { StateContext } from "./context/State";
+// React stuff
+import { useState } from 'react'
 
-import ModalVideo from "react-modal-video";
-import useCursorHandlers from "./hooks/useCursorHandlers";
+// Styles
+import './style.css'
+
+// 3rd Party Lib
+import { motion, AnimatePresence, AnimateSharedLayout } from "framer-motion"
+import {Switch, Route} from "react-router-dom"
+
+// Pages
+import Home from "./pages/Home";
+import Client from "./pages/Client";
+import Service from "./pages/Service";
+import Contact from "./pages/Contact";
 
 
 // Components
 import Header from './components/Header'
 import Footer from './components/Footer'
 import Loader from "./components/Loader"
-import Intro from "./components/Intro"
 import Cursor from "./components/Cursor"
-import Button from "./components/Button"
 
 function App() {
 
-  const cursorHandlers = useCursorHandlers();
-
   const [loading, setLoading] = useState(true);
-
-   // consuming contexts
-   const {isOpen, setOpen} = useContext(StateContext)
 
   return (
     <> 
       <AnimateSharedLayout type="crossfade">
         <AnimatePresence>
           {loading ? ( 
-            <motion.div key="loader"><Loader setLoading={setLoading} /></motion.div> 
+            <motion.div key="pre-loader"><Loader setLoading={setLoading} /></motion.div> 
           ) : (
             <>
-              <div className="App" onClick={(e) => setOpen(true)}>        
-                <motion.div class="wrapper"
-                  initial={{ opacity:0, y:-180 }}
-                  animate={{ opacity:1, y:0 }}
-                  transition={{
-                    ease: 'easeInOut',
-                    duration: 1,
-                    delay: 0.6
-                  }}
-                >
+              <div className="App">     
+                <div className="wrapper">
                   <Header />
-                  <main class="page-main">
-                    <div>
-                      <h1>We are here to 
-                        <a href="https://fast.com" {...cursorHandlers}> help you</a>
-                      </h1>
-                    </div>
-                  </main>
-                  <Footer />
-                </motion.div>
-                <ModalVideo
-                  channel="youtube"
-                  autoplay
-                  isOpen={isOpen}
-                  videoId="sSZNLAIL65M"
-                  onClose={() => setOpen(false)}
-                />
-                <Cursor />
+                  <main className="page-main">
+                  <Switch>
+                  
+                    <Route exact path="/">
+                      <Home />
+                    </Route>
+                    
+                    <Route path="/client">
+                      <Client />
+                    </Route>
+                    
+                    <Route path="/service">
+                      <Service />
+                    </Route>
 
-                
+                    <Route path="/contact">
+                      <Contact />
+                    </Route>
+                  
+                  </Switch>
+                  </main>
+
+                  <Footer />
+                </div>
+                <Cursor />
               </div>
             </>
           )}

@@ -1,13 +1,13 @@
-import React from 'react';
 import useCursorHandlers from "../hooks/useCursorHandlers";
+import {Link} from 'react-router-dom'
 
 function Footer(){
   const cursorHandlers = useCursorHandlers();
     return(
-        <footer class="page-footer">
+        <footer className="page-footer">
           <nav>
-            <a class="logo" onClick={(e) => e.stopPropagation()} href="https://yahoo.com" {...cursorHandlers}>Service</a>
-            <a class="logo" onClick={(e) => e.stopPropagation()} href="https://instagram.com" {...cursorHandlers}>Contact</a>
+            <Link onClick={(e) => e.stopPropagation()} to="/service" {...cursorHandlers}>Service</Link>
+            <Link onClick={(e) => e.stopPropagation()} to="/contact" {...cursorHandlers}>Contact</Link>
           </nav>
         </footer>
     )

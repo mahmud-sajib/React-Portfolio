@@ -1,15 +1,15 @@
-import {React, useContext} from 'react';
 import useCursorHandlers from "../hooks/useCursorHandlers";
+import {Link} from 'react-router-dom'
 
 function Header(){
   const cursorHandlers = useCursorHandlers();
 
     return(
-        <header class="page-header">
+        <header className="page-header">
           <nav>
-            <a class="logo" onClick={(e) => e.stopPropagation()} href="https://facebook.com" {...cursorHandlers}>Home</a>
-            <a class="logo" onClick={(e) => e.stopPropagation()} href="https://fast.com" {...cursorHandlers}>Client</a>
-          </nav>
+            <Link onClick={(e) => e.stopPropagation()} {...cursorHandlers} to="/">Home</Link>
+            <Link onClick={(e) => e.stopPropagation()} {...cursorHandlers} to="/client">Client</Link>
+          </nav> 
         </header>
     )
 }
