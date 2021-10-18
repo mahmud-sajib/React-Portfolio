@@ -1,4 +1,4 @@
-import React from 'react';
+import {React, useContext} from 'react';
 import useCursorHandlers from "../hooks/useCursorHandlers";
 
 function Header(){
@@ -7,8 +7,8 @@ function Header(){
     return(
         <header class="page-header">
           <nav>
-            <a class="logo" {...cursorHandlers} href="https://facebook.com">Home</a>
-            <a class="logo" href="https://fast.com" {...cursorHandlers}>Client</a>
+            <a class="logo" onClick={(e) => e.stopPropagation()} href="https://facebook.com" {...cursorHandlers}>Home</a>
+            <a class="logo" onClick={(e) => e.stopPropagation()} href="https://fast.com" {...cursorHandlers}>Client</a>
           </nav>
         </header>
     )
