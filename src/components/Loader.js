@@ -39,7 +39,7 @@ const Loader = ({ setLoading }) => {
 
   return (
     <>
-      <div className='pageloader-container'>
+      <div className='pageloader-container hide-cursor'>
 
         <motion.div
           variants= {container}

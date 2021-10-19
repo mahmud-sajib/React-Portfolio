@@ -1,5 +1,5 @@
 // React stuff
-import { useState } from 'react'
+import { useState, useContext } from 'react'
 
 // Styles
 import './style.css'
@@ -8,22 +8,26 @@ import './style.css'
 import { motion, AnimatePresence, AnimateSharedLayout } from "framer-motion"
 import {Switch, Route} from "react-router-dom"
 
+import { StateContext } from './context/State'
+
 // Pages
 import Home from "./pages/Home";
 import Client from "./pages/Client";
 import Service from "./pages/Service";
 import Contact from "./pages/Contact";
 
-
 // Components
 import Header from './components/Header'
 import Footer from './components/Footer'
 import Loader from "./components/Loader"
 import Cursor from "./components/Cursor"
+import Modal from './components/Modal';
 
 function App() {
 
   const [loading, setLoading] = useState(true);
+
+  const {openModal} = useContext(StateContext)
 
   return (
     <> 
@@ -33,8 +37,10 @@ function App() {
             <motion.div key="pre-loader"><Loader setLoading={setLoading} /></motion.div> 
           ) : (
             <>
-              <div className="App">     
-                <div className="wrapper">
+              <div className="App">
+                
+                     
+                <div className="wrapper" onClick={openModal}>
                   <Header />
                   <main className="page-main">
                   <Switch>
@@ -61,6 +67,7 @@ function App() {
                   <Footer />
                 </div>
                 <Cursor />
+                <Modal />
               </div>
             </>
           )}
