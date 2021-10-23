@@ -5,7 +5,7 @@ import { useState, useContext } from 'react'
 import './style.css'
 
 // 3rd Party Lib
-import { motion, AnimatePresence, AnimateSharedLayout } from "framer-motion"
+import { motion, AnimatePresence } from "framer-motion"
 import {Switch, Route} from "react-router-dom"
 
 import { StateContext } from './context/State'
@@ -31,48 +31,48 @@ function App() {
 
   return (
     <> 
-      <AnimateSharedLayout type="crossfade">
+      
         <AnimatePresence>
           {loading ? ( 
             <motion.div key="pre-loader"><Loader setLoading={setLoading} /></motion.div> 
           ) : (
             <>
               <div className="App">
+               
+                  <div className="wrapper" onClick={openModal}>
+                    <Header />
+                    <main className="page-main">
+                    <Switch>
+                    
+                      <Route exact path="/">
+                        <Home />
+                      </Route>
+                      
+                      <Route path="/client">
+                        <Client />
+                      </Route>
+                      
+                      <Route path="/service">
+                        <Service />
+                      </Route>
+
+                      <Route path="/contact">
+                        <Contact />
+                      </Route>
+                    
+                    </Switch>
+                    </main>
+
+                    <Footer />
+                  </div>
                 
-                     
-                <div className="wrapper" onClick={openModal}>
-                  <Header />
-                  <main className="page-main">
-                  <Switch>
-                  
-                    <Route exact path="/">
-                      <Home />
-                    </Route>
-                    
-                    <Route path="/client">
-                      <Client />
-                    </Route>
-                    
-                    <Route path="/service">
-                      <Service />
-                    </Route>
-
-                    <Route path="/contact">
-                      <Contact />
-                    </Route>
-                  
-                  </Switch>
-                  </main>
-
-                  <Footer />
-                </div>
                 <Cursor />
                 <Modal />
               </div>
             </>
           )}
         </AnimatePresence>
-      </AnimateSharedLayout>
+      
     </>
   );
 }

@@ -26,14 +26,15 @@ const item = {
   },
   exit: {
     opacity: 0,
-    scale:2,
+    scale:3,
     y: -200,
     transition: {
       ease: "easeInOut",
-      duration: 0.8,
+      duration: 1,
     },
   },
 }
+
 
 const Loader = ({ setLoading }) => {
 
@@ -47,6 +48,7 @@ const Loader = ({ setLoading }) => {
           animate= "show"
           exit= "exit"
           onAnimationComplete= {() => setLoading(false)}
+          
         >
           <motion.div className="circle1" variants={item}></motion.div>
           <motion.div className="circle2" variants={item}></motion.div>
@@ -64,7 +66,7 @@ const Loader = ({ setLoading }) => {
           <motion.img className="image4" variants={item} 
             src={process.env.PUBLIC_URL + `/images/black-flower.svg`}
           />
-          <motion.img className="image-middle" variants={item} 
+          <motion.img className="image-middle" variants={item}
             src={process.env.PUBLIC_URL + `/images/black-flower.svg`}
           />
           
