@@ -20,9 +20,9 @@ body {
   box-sizing: border-box;
 }
 
-.show-cursor {
+/* .show-cursor {
   cursor: auto !important;
-}
+} */
 
 .hide-cursor {
   cursor: none !important;
@@ -30,7 +30,13 @@ body {
 
 a,
 .wrapper,
-.pageloader-container {
+.pageloader-container,
+.page-header,
+.page-footer {
+  cursor: none !important;
+}
+
+.App {
   cursor: none !important;
 }
 
@@ -80,10 +86,38 @@ video {
 
 /* HEADER & FOOTER
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-.page-header,
-.page-footer {
-  background: var(--main-black-color);
+.page-header {
+  position: absolute;
+  padding: 30px;
+  top: 5%;
+  left: 30px;
+  right: 30px;
 }
+
+.page-footer {
+  position: absolute;
+  padding: 30px;
+  bottom: 5%;
+  left: 30px;
+  right: 30px;
+}
+
+.page-header a,
+.page-footer a {
+  color: var(--main-white-color);
+  animation: fadeIn linear 7s;
+  animation-delay: 5s;
+}
+
+@keyframes fadeIn {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
 .page-header nav,
 .page-footer nav {
   display: flex;
@@ -136,6 +170,7 @@ video {
   top: 0;
   bottom: 0;
   position: fixed;
+  z-index: 9999;
 }
 
 .circle1 {
@@ -348,6 +383,7 @@ Modal
 .show-modal {
   visibility: visible;
   z-index: 1000;
+  cursor: auto !important;
 }
 
 .modal-container {
