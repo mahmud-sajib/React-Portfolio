@@ -491,7 +491,11 @@ article.nextSlide {
   /* transform: translateX(100%); */
 }
 
-/************************************/
+/*
+=============== 
+Video
+===============
+*/
 
 .video-react {
   position: inherit;

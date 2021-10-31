@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react'
 import clientData from '../data/clientData'
 
 function ClientSlider() {
+    // eslint-disable-next-line
     const [clientList, setclientList] = useState(clientData)
     const [index, setIndex] = useState(0)
     const [hover, setHover] = useState(false);

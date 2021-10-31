@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react'
 import serviceData from '../data/serviceData'
 
 function ServiceSlider() {
+    // eslint-disable-next-line
     const [serviceList, setserviceList] = useState(serviceData)
     const [index, setIndex] = useState(0)
     const [hover, setHover] = useState(false);

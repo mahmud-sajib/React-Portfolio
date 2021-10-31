@@ -1,7 +1,6 @@
 import React, {useContext} from 'react'
 import { StateContext } from "../context/State";
 
-import { VideoProgress } from 'react-video-progress'
 import { Player,
     ControlBar,
     ReplayControl,
@@ -16,7 +15,7 @@ import { Player,
 
 function Modal() {
 
-    const {isModalOpen, closeModal, playOrPause, videoRef} = useContext(StateContext)
+    const {isModalOpen, closeModal, videoRef} = useContext(StateContext)
 
     return (
         <div className={`${
