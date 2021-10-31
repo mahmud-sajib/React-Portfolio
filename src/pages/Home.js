@@ -17,7 +17,11 @@ function Home() {
                     <div className="wrapper">
                         
                         <main className="page-main">
-                            <h2>Home Page</h2>
+                            <h2>I'm Nakiska, a 
+                                <br/> creative director &amp; 
+                                <br/> interaction designer 
+                                <br /> based in Brooklyn.
+                            </h2>
                         </main>
                         
                     </div> 

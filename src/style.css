@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css?family=Dosis:400,700");
+@import url("https://use.typekit.net/pry7jhz.css");
 
 :root {
   --main-white-color: #f2f2f2;
@@ -6,7 +6,7 @@
   --main-purple-color: #9e89b8;
 }
 body {
-  font: 16px/1.5 "Dosis", sans-serif;
+  font-family: itc-benguiat, serif;
   color: var(--main-white-color);
 
   /*IE FIX*/
@@ -18,6 +18,17 @@ body {
   padding: 0;
   margin: 0;
   box-sizing: border-box;
+}
+
+h2 {
+  font-size: 45px;
+  font-weight: 400;
+}
+
+h6 {
+  font-size: 17px;
+  font-weight: 400;
+  margin-bottom: 20px;
 }
 
 /* .show-cursor {
@@ -51,13 +62,15 @@ ul {
 
 a {
   text-decoration: none;
+  font-size: 15px;
+  text-transform: lowercase;
 }
 
-video {
+/* video {
   width: 100vw;
   height: 100vh;
   object-fit: cover;
-}
+} */
 
 /* CONTAINER
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
@@ -409,11 +422,84 @@ Modal
 
 .close-modal-btn {
   position: absolute;
-  top: 3.5rem;
-  right: 3.5rem;
+  top: 13%;
+  right: 8.5%;
   font-size: 2rem;
   background: transparent;
   border-color: transparent;
-  color: #ff4b36;
+  color: white;
   cursor: pointer !important;
+}
+
+/*
+=============== 
+Slider
+===============
+*/
+
+.section-center {
+  margin: 0 auto;
+  /* width: 80vw; */
+  height: 50px;
+  /* max-width: 800px; */
+  text-align: center;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  /* overflow: hidden; */
+}
+
+.title {
+  font-size: 40px;
+}
+
+@media (min-width: 800px) {
+  .text {
+    max-width: 45em;
+  }
+
+  .prev,
+  .next {
+    width: 2rem;
+    height: 2rem;
+    font-size: 1.5rem;
+  }
+}
+
+article {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0;
+  transition: all 0.1s linear;
+}
+
+article.activeSlide {
+  opacity: 1;
+  /* transform: translateX(0); */
+}
+
+article.lastSlide {
+  /* transform: translateX(-100%); */
+  opacity: 0;
+}
+
+article.nextSlide {
+  opacity: 0;
+  /* transform: translateX(100%); */
+}
+
+/************************************/
+
+.video-react {
+  position: inherit;
+}
+
+.video-react .video-react-control-bar {
+  width: 70%;
+  left: 15%;
+  bottom: 15%;
+  background-color: transparent;
 }

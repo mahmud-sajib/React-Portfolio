@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import { motion, AnimatePresence } from "framer-motion"
 import Loader from '../components/Loader';
+import ServiceSlider from '../components/ServiceSlider';
 
 function Service() {
 
@@ -16,7 +17,8 @@ function Service() {
                     <div className="wrapper" >
                        
                         <main className="page-main">
-                            <h2>Service Page</h2>
+                            <h6>some things i've done over the years</h6>
+                            <ServiceSlider />
                         </main>
                         
                     </div> 

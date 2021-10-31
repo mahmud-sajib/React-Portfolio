@@ -6,8 +6,9 @@ function Footer(){
     return(
         <footer className="page-footer">
           <nav>
-            <Link onClick={(e) => e.stopPropagation()} to="/service" {...cursorHandlers}>Service</Link>
-            <Link onClick={(e) => e.stopPropagation()} to="/contact" {...cursorHandlers}>Contact</Link>
+            <Link onClick={(e) => e.stopPropagation()} to="/service" {...cursorHandlers}>Services</Link>
+            
+            <Link onClick={(e) => e.stopPropagation()} {...cursorHandlers} to="/client">Clients</Link>
           </nav>
         </footer>
     )

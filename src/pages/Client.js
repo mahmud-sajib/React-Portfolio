@@ -1,6 +1,7 @@
 import React, {useState} from 'react'
 import { motion, AnimatePresence } from "framer-motion"
 import Loader from '../components/Loader';
+import ClientSlider from '../components/ClientSlider';
 
 function Client() {
 
@@ -14,11 +15,10 @@ function Client() {
                     </motion.div> 
                 ) : (
                     <div className="wrapper">
-                       
                         <main className="page-main">
-                            <h2>Client Page</h2>
+                            <h6>some brands i've made cool stuff with</h6>
+                            <ClientSlider />
                         </main>
-                        
                     </div> 
                 )
             }

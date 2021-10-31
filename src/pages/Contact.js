@@ -16,7 +16,8 @@ function Contact() {
                     <div className="wrapper">
                         
                         <main className="page-main">
-                            <h2>Contact Page</h2>
+                            <h6>if you like what you see, say hi</h6>
+                            <h2>hi@nakishkashaikh.com</h2>
                         </main>
                         
                     </div> 

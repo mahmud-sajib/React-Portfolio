@@ -8,7 +8,7 @@ function Header(){
         <header className="page-header">
           <nav>
             <Link onClick={(e) => e.stopPropagation()} {...cursorHandlers} to="/">Home</Link>
-            <Link onClick={(e) => e.stopPropagation()} {...cursorHandlers} to="/client">Client</Link>
+            <Link onClick={(e) => e.stopPropagation()} to="/contact" {...cursorHandlers}>Contact</Link>
           </nav> 
         </header>
     )
