@@ -19,13 +19,16 @@ function Modal() {
 
     return (
         <div className={`${
-            isModalOpen ? 'modal-overlay show-modal' : 'modal-overlay'
+            isModalOpen ? 'modal-overlay show-modal' : 'modal-overlay '
           }`}>
             <div className={`modal-container ${
                 isModalOpen ? 'show-cursor' : 'hide-cursor'
             }`}>
                 
-                <div>
+                <div className={`custom-video-container ${
+                !isModalOpen ? 'hide-container' : ''
+                }`}
+                >
                 <Player ref={videoRef}>
                     <source src="https://media.w3.org/2010/05/sintel/trailer_hd.mp4"  />
                     <ControlBar>
