@@ -2,6 +2,8 @@ import React, {useState} from 'react'
 import { motion, AnimatePresence } from "framer-motion"
 import Loader from '../components/Loader';
 import ServiceSlider from '../components/ServiceSlider';
+import ServiceSliderMobile from '../components/ServiceSliderMobile';
+import { BrowserView, MobileView } from 'react-device-detect';
 
 function Service() {
 
@@ -18,7 +20,12 @@ function Service() {
                        
                         <main className="page-main">
                             <h6>some things i've done over the years</h6>
-                            <ServiceSlider />
+                            <BrowserView> 
+                                <ServiceSlider />
+                            </BrowserView>
+                            <MobileView>
+                                <ServiceSliderMobile />
+                            </MobileView>
                         </main>
                         
                     </div> 

@@ -2,6 +2,7 @@ import React, {useState, useEffect} from 'react'
 import clientData from '../data/clientData'
 
 function ClientSliderMobile() {
+    // eslint-disable-next-line
     const [clientList, setclientList] = useState(clientData)
     const [index, setIndex] = useState(0)
 
@@ -44,7 +45,7 @@ function ClientSliderMobile() {
                     return (
 
                         <article className={position} key={c.id}>
-                            <h1 className="slide-header">{c.client}</h1>
+                            <h2 className="slide-header">{c.client}</h2>
                         </article>
                     )
                 })

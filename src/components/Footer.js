@@ -1,8 +1,13 @@
+import { useContext } from 'react'
 import useCursorHandlers from "../hooks/useCursorHandlers";
 import {useLocation, Link} from 'react-router-dom'
+import { MobileView } from 'react-device-detect';
+import { StateContext } from "../context/State";
 
 function Footer(){
   const cursorHandlers = useCursorHandlers();
+
+  const {openModal} = useContext(StateContext)
 
   //assigning location variable
   const location = useLocation();
@@ -24,6 +29,16 @@ function Footer(){
           >
             Services
           </Link>
+          <MobileView>  
+          <button className='open-modal-btn' onClick={openModal}>
+            Play
+            <img className="mobile-play-btn-flower"
+              src={process.env.PUBLIC_URL + `/images/red-flower.svg`}
+              alt="cursor-flower"
+            />
+          </button>
+           
+          </MobileView>
           
           <Link 
             onClick={(e) => e.stopPropagation()} 

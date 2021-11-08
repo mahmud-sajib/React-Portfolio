@@ -7,7 +7,7 @@ import './style.css'
 
 // 3rd Party Lib
 import {Switch, Route} from "react-router-dom"
-
+import { BrowserView } from 'react-device-detect';
 
 // Pages
 import Home from "./pages/Home";
@@ -47,8 +47,10 @@ function App() {
             </Switch>
           <Footer />
         </div>
-           
-        <Cursor />
+        <BrowserView>
+          <Cursor />
+        </BrowserView> 
+        
         <Modal />
       </div>     
     </>

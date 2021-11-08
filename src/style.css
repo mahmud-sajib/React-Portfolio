@@ -206,7 +206,29 @@ a,
 
 /* MQ
 –––––––––––––––––––––––––––––––––––––––––––––––––– */
-@media screen and (min-width: 550px) {
+@media screen and (max-width: 550px) {
+  .wrapper,
+  .pageloader-container,
+  .page-header,
+  .page-footer {
+    cursor: auto !important;
+  }
+  a {
+    cursor: pointer !important;
+  }
+
+  h2,
+  .contact-lead {
+    font-size: 24px;
+  }
+
+  h6 {
+    font-size: 16px;
+  }
+
+  .page-footer {
+    bottom: 1%;
+  }
 }
 
 @media screen and (min-width: 768px) {
@@ -431,6 +453,16 @@ a,
   animation: petals 2s infinite linear;
 }
 
+.mobile-play-btn-flower {
+  width: 30px;
+  height: 30px;
+  position: absolute;
+  transform: translate(-50%, -50%);
+  left: 27px;
+  bottom: -18px;
+  animation: petals 2s infinite linear;
+}
+
 @keyframes petals {
   0% {
     transform: rotate(0);
@@ -477,7 +509,8 @@ Modal
 }
 
 .open-modal-btn {
-  background: black;
+  position: relative;
+  background: transparent;
   color: white;
   border: 1px solid white;
   border-radius: 50%;

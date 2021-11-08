@@ -1,7 +1,8 @@
-import React, {useState, useEffect, useRef} from 'react'
+import React, {useState, useEffect} from 'react'
 import serviceData from '../data/serviceData'
 
 function ServiceSliderMobile() {
+    // eslint-disable-next-line
     const [serviceList, setserviceList] = useState(serviceData)
     const [index, setIndex] = useState(0)
 
@@ -45,7 +46,7 @@ function ServiceSliderMobile() {
                     
                     return (
                         <article className={position} key={s.id}>
-                            <h1 className="slide-header">{s.service}</h1>
+                            <h2 className="slide-header">{s.service}</h2>
                         </article>  
                     )   
                 }) 

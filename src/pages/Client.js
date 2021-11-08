@@ -2,6 +2,8 @@ import React, {useState} from 'react'
 import { motion, AnimatePresence } from "framer-motion"
 import Loader from '../components/Loader';
 import ClientSlider from '../components/ClientSlider';
+import ClientSliderMobile from '../components/ClientSliderMobile';
+import { BrowserView, MobileView } from 'react-device-detect';
 
 function Client() {
 
@@ -17,7 +19,12 @@ function Client() {
                     <div className="wrapper">
                         <main className="page-main">
                             <h6>some brands i've made cool stuff with</h6>
-                            <ClientSlider />
+                            <BrowserView>
+                                <ClientSlider />
+                            </BrowserView>
+                            <MobileView>
+                                <ClientSliderMobile />
+                            </MobileView>
                         </main>
                     </div> 
                 )
