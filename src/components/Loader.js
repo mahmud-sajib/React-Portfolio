@@ -47,7 +47,7 @@ const Loader = ({ setLoading }) => {
           initial= "hidden"
           animate= "show"
           exit= "exit"
-          onAnimationComplete= {() => setLoading(false)}
+          onAnimationComplete= {() => {setLoading(false)}}
           
         >
           <motion.div className="circle1" variants={item}></motion.div>

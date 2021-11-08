@@ -4,14 +4,17 @@ import Loader from '../components/Loader';
 
 function Home() {
 
-    const [loading, setLoading] = useState(true);
-    
+    const [loading, setLoading] = useState(true); 
 
     return (
         <AnimatePresence>
             {
                 loading ? ( 
-                    <motion.div key="pre-loader"><Loader setLoading={setLoading} />
+                    <motion.div key="pre-loader">
+                        <Loader 
+                        setLoading={setLoading} 
+                        
+                        />
                     </motion.div> 
                 ) : (
                     <div className="wrapper">

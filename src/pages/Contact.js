@@ -17,7 +17,11 @@ function Contact() {
                         
                         <main className="page-main">
                             <h6>if you like what you see, say hi</h6>
-                            <h2>hi@nakishkashaikh.com</h2>
+                            <h2>
+                                <span className="contact-lead non-active">
+                                hi@nakiskashaikh.com
+                                </span>
+                            </h2>
                         </main>
                         
                     </div> 
