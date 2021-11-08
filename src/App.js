@@ -7,7 +7,7 @@ import './style.css'
 
 // 3rd Party Lib
 import {Switch, Route} from "react-router-dom"
-import { motion } from "framer-motion";
+
 
 // Pages
 import Home from "./pages/Home";

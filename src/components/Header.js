@@ -1,4 +1,3 @@
-import { useState, useEffect } from 'react'
 import useCursorHandlers from "../hooks/useCursorHandlers";
 import {useLocation, Link} from 'react-router-dom'
 
